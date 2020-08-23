@@ -153,5 +153,24 @@ namespace eBvel.Practic.Calendar_V2._1.Controls
         {
             Right_Label.ForeColor = Color.Black;
         }
+        //
+        //The button for search objects in the table.
+        //
+        private void Search_Button_Click(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = db.Calendars.Local.Where(p => p.FullDate.Contains(textBox1.Text)).OrderBy(p => p.Id).ToList();
+        }
+
+        private void SearchButton_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+                Search_Button.PerformClick();
+        }
+
+        private void GridView_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            //var eventDate = FindElement();
+            //ViewEvent_Label.Text += db.DbEvents.Local.Where(p => p.Calendars.ToString() == eventDate.FullDate).Select(p => p.TextEvent);
+        }
     }
 }

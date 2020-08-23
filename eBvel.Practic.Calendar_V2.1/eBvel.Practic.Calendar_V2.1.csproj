@@ -125,6 +125,7 @@
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\CLibrary.Calendar.datasource" />
+    <None Include="Properties\DataSources\CLibrary.Events.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
