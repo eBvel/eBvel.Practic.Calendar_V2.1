@@ -14,9 +14,8 @@ namespace eBvel.Practic.Calendar_V2._1.Controls
         CalendarDBContext db;
         DateTime NOW;
         CheckingEvents CheckingTodayEvent;
-        DateTime dd;
         //
-        //Поиск объектов БД.
+        //Method for searching objects in the table.
         //
         public Events FindElement()
         {
@@ -51,7 +50,6 @@ namespace eBvel.Practic.Calendar_V2._1.Controls
             db.DbEvents.Load();
             dataGridView1.DataSource = db.DbEvents.Local.ToBindingList();
         }
-
         //
         //The event to checking today list.
         //
@@ -78,16 +76,25 @@ namespace eBvel.Practic.Calendar_V2._1.Controls
         {
             if (dataGridView1.SelectedRows.Count > 0)
             {
-                var eevent = FindElement() ?? throw new NullReferenceException("SHOTO TUT NE TAK");
+                var eevent = FindElement() ?? throw new NullReferenceException("The element wasn't selected. Please, try again.");
                 var addEventForm = new AddEventForm();
+                addEventForm.comboBox1.Visible = true;
+                //To load info to the combo box
+                var calendars = db.Calendars.ToList();
+                addEventForm.comboBox1.DataSource = calendars;
+                addEventForm.comboBox1.ValueMember = "Id";
+                addEventForm.comboBox1.DisplayMember = "FullDate";
+                addEventForm.comboBox1.Text = eevent.Calendars.ToString();
+                //end load.
                 addEventForm.EventTextBox.Text = eevent.TextEvent;
                 addEventForm.PlaceEventTextBox.Text = eevent.PlaceEvent;
                 addEventForm.dateTimePicker1.Value = Convert.ToDateTime(eevent.StartDate);
                 addEventForm.dateTimePicker2.Value = Convert.ToDateTime(eevent.EndDate);
-
+                
                 DialogResult result = addEventForm.ShowDialog(this);
                 if (result == DialogResult.OK)
                 {
+                    eevent.Calendars = (CLibrary.Calendar)addEventForm.comboBox1.SelectedItem;
                     eevent.TextEvent = addEventForm.EventTextBox.Text;
                     eevent.PlaceEvent = addEventForm.PlaceEventTextBox.Text;
                     eevent.StartDate = addEventForm.dateTimePicker1.Value.ToShortTimeString();
@@ -102,7 +109,7 @@ namespace eBvel.Practic.Calendar_V2._1.Controls
         //
         private void Search_Button_Click(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = db.DbEvents.Local.Where(p => p.TextEvent.Contains(textBox1.Text)).ToList();
+            dataGridView1.DataSource = db.DbEvents.Local.Where(p => p.TextEvent.Contains(SearchBox.Text)).ToList();
         }
         //
         //Perform Click.
@@ -111,14 +118,6 @@ namespace eBvel.Practic.Calendar_V2._1.Controls
         {
             if (e.KeyChar == 13)
                 Search_Button.PerformClick();
-        }
-        //
-        //The event transfers to the other date.
-        //
-        private void Transfer_Button_Click(object sender, EventArgs e)
-        {
-            var eevent = FindElement() ?? throw new NullReferenceException("Для переноса, требуется выбрать мероприятие!");
-
         }
     }
 }

@@ -14,7 +14,7 @@ namespace eBvel.Practic.Calendar_V2._1.Controls
         CalendarDBContext db;
         int page;
         //
-        //Поиск объектов.
+        //Method for searching objects.
         //
         public CLibrary.Calendar FindElement()
         {
@@ -41,7 +41,7 @@ namespace eBvel.Practic.Calendar_V2._1.Controls
             dataGridView1.DataSource = db.Calendars.Local.ToBindingList();
         }
         //
-        //Кнопка, добавить событие.
+        //Button for adding events.
         //
         private void AddEventButton_Click(object sender, EventArgs e)
         {
