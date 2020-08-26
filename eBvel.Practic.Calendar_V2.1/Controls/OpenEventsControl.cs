@@ -6,6 +6,7 @@ using CLibrary;
 using eBvel.Calendar.Praktic.Final;
 using System.Data.Entity;
 using eBvel.Practic.Calendar_V2._1.Forms;
+using System.Drawing;
 
 namespace eBvel.Practic.Calendar_V2._1.Controls
 {
@@ -34,8 +35,18 @@ namespace eBvel.Practic.Calendar_V2._1.Controls
         //
         internal void SecondConstruction()
         {
+            CheckingTodayEvent.EventCheckingIsEventToDay += CheckingTodayEvent_EventCheckingIsEventToDay;
             CheckingTodayEvent.EventCheckingIsEvent += CheckingTodayEvent_EventCheckingIsEvent;
             CheckingTodayEvent.CheckingIsEvent(NOW);
+            PastEvents();
+        }
+        //
+        //Fail event.
+        //
+        private void CheckingTodayEvent_EventCheckingIsEvent(Events obj)
+        {
+            obj.IsEvent = false;
+            db.SaveChanges();
         }
         //
         //Construction.
@@ -53,21 +64,9 @@ namespace eBvel.Practic.Calendar_V2._1.Controls
         //
         //The event to checking today list.
         //
-        private void CheckingTodayEvent_EventCheckingIsEvent(string obj)
+        private void CheckingTodayEvent_EventCheckingIsEventToDay(Events obj)
         {
-            string s = "";
-            if (obj == "ToDay is Event!")
-            {
-                foreach (var item in db.DbEvents)
-                {
-                    if (item.Calendars.ToString() == NOW.ToShortDateString())
-                    {
-                        s = item.TextEvent;
-                        break;
-                    }
-                }
-                MessageBox.Show($"{obj}\n{s}", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-            }
+            MessageBox.Show($"На сегодня запланировано мероприятие.\n{obj.TextEvent}", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
         }
         //
         //To edit the event after a double click.
@@ -80,8 +79,7 @@ namespace eBvel.Practic.Calendar_V2._1.Controls
                 var addEventForm = new AddEventForm();
                 addEventForm.comboBox1.Visible = true;
                 //To load info to the combo box
-                var calendars = db.Calendars.ToList();
-                addEventForm.comboBox1.DataSource = calendars;
+                addEventForm.comboBox1.DataSource = db.Calendars.ToList();
                 addEventForm.comboBox1.ValueMember = "Id";
                 addEventForm.comboBox1.DisplayMember = "FullDate";
                 addEventForm.comboBox1.Text = eevent.Calendars.ToString();
@@ -90,7 +88,7 @@ namespace eBvel.Practic.Calendar_V2._1.Controls
                 addEventForm.PlaceEventTextBox.Text = eevent.PlaceEvent;
                 addEventForm.dateTimePicker1.Value = Convert.ToDateTime(eevent.StartDate);
                 addEventForm.dateTimePicker2.Value = Convert.ToDateTime(eevent.EndDate);
-                
+
                 DialogResult result = addEventForm.ShowDialog(this);
                 if (result == DialogResult.OK)
                 {
@@ -118,6 +116,19 @@ namespace eBvel.Practic.Calendar_V2._1.Controls
         {
             if (e.KeyChar == 13)
                 Search_Button.PerformClick();
+        }
+        //
+        //
+        //
+        void PastEvents()
+        {
+            foreach(DataGridViewRow row in dataGridView1.Rows)
+            {
+                if(Convert.ToDateTime(row.Cells[1].Value.ToString()) < DateTime.Today)
+                {
+                    row.DefaultCellStyle.BackColor = Color.SlateGray;
+                }
+            }
         }
     }
 }

@@ -41,13 +41,14 @@
             // 
             // menuStrip1
             // 
+            this.menuStrip1.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.Calendar_Menu,
             this.Events_Menu});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(800, 29);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -58,27 +59,27 @@
             this.OpenCalendar_Menu,
             this.Exit_Menu});
             this.Calendar_Menu.Name = "Calendar_Menu";
-            this.Calendar_Menu.Size = new System.Drawing.Size(96, 24);
+            this.Calendar_Menu.Size = new System.Drawing.Size(116, 25);
             this.Calendar_Menu.Text = "Календарь";
             // 
             // CreateCalendar_Menu
             // 
             this.CreateCalendar_Menu.Name = "CreateCalendar_Menu";
-            this.CreateCalendar_Menu.Size = new System.Drawing.Size(142, 26);
+            this.CreateCalendar_Menu.Size = new System.Drawing.Size(155, 26);
             this.CreateCalendar_Menu.Text = "Создать";
             this.CreateCalendar_Menu.Click += new System.EventHandler(this.CreateCalendar_Menu_Click);
             // 
             // OpenCalendar_Menu
             // 
             this.OpenCalendar_Menu.Name = "OpenCalendar_Menu";
-            this.OpenCalendar_Menu.Size = new System.Drawing.Size(142, 26);
+            this.OpenCalendar_Menu.Size = new System.Drawing.Size(155, 26);
             this.OpenCalendar_Menu.Text = "Открыть";
             this.OpenCalendar_Menu.Click += new System.EventHandler(this.OpenCalendar_Menu_Click);
             // 
             // Exit_Menu
             // 
             this.Exit_Menu.Name = "Exit_Menu";
-            this.Exit_Menu.Size = new System.Drawing.Size(142, 26);
+            this.Exit_Menu.Size = new System.Drawing.Size(155, 26);
             this.Exit_Menu.Text = "Выход";
             this.Exit_Menu.Click += new System.EventHandler(this.Exit_Menu_Click);
             // 
@@ -87,13 +88,13 @@
             this.Events_Menu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.OpenEvents_Menu});
             this.Events_Menu.Name = "Events_Menu";
-            this.Events_Menu.Size = new System.Drawing.Size(118, 24);
+            this.Events_Menu.Size = new System.Drawing.Size(138, 25);
             this.Events_Menu.Text = "Мероприятия";
             // 
             // OpenEvents_Menu
             // 
             this.OpenEvents_Menu.Name = "OpenEvents_Menu";
-            this.OpenEvents_Menu.Size = new System.Drawing.Size(142, 26);
+            this.OpenEvents_Menu.Size = new System.Drawing.Size(155, 26);
             this.OpenEvents_Menu.Text = "Открыть";
             this.OpenEvents_Menu.Click += new System.EventHandler(this.OpenEvents_Menu_Click);
             // 
@@ -101,9 +102,9 @@
             // 
             this.panel1.AutoSize = true;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 28);
+            this.panel1.Location = new System.Drawing.Point(0, 29);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(800, 422);
+            this.panel1.Size = new System.Drawing.Size(800, 421);
             this.panel1.TabIndex = 1;
             // 
             // Form1
@@ -114,8 +115,10 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.Text = "Производственный календарь";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

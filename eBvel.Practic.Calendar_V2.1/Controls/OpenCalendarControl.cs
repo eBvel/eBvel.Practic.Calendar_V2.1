@@ -14,7 +14,7 @@ namespace eBvel.Practic.Calendar_V2._1.Controls
         CalendarDBContext db;
         int page;
         //
-        //Method for searching objects.
+        //Method, for searching objects in the table.
         //
         public CLibrary.Calendar FindElement()
         {
@@ -41,7 +41,7 @@ namespace eBvel.Practic.Calendar_V2._1.Controls
             dataGridView1.DataSource = db.Calendars.Local.ToBindingList();
         }
         //
-        //Button for adding events.
+        //Button, for adding events.
         //
         private void AddEventButton_Click(object sender, EventArgs e)
         {
@@ -124,13 +124,14 @@ namespace eBvel.Practic.Calendar_V2._1.Controls
             }
             else return page > 1 ? --page : page = 12;
         }
+
+        #region The behaviour of labels.
         //
         //To leave from the left label.
         //
         private void LeftLabel_Leave(object sender, EventArgs e)
         {
             Left_Label.ForeColor = Color.Black;
-
         }
         //
         //To enter to the left label.
@@ -153,14 +154,19 @@ namespace eBvel.Practic.Calendar_V2._1.Controls
         {
             Right_Label.ForeColor = Color.Black;
         }
+        #endregion
+
         //
         //The button for search objects in the table.
         //
         private void Search_Button_Click(object sender, EventArgs e)
         {
             dataGridView1.DataSource = db.Calendars.Local.Where(p => p.FullDate.Contains(textBox1.Text)).OrderBy(p => p.Id).ToList();
+            SecondConstruction();
         }
-
+        //
+        //Method, key press the enter.
+        //
         private void SearchButton_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == 13)

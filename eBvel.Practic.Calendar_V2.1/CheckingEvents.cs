@@ -12,23 +12,25 @@ namespace eBvel.Calendar.Praktic.Final
             db = new CalendarDBContext();
         }
 
-        public event Action<string> EventCheckingIsEvent;
+        public event Action<Events> EventCheckingIsEventToDay;
+        public event Action<Events> EventCheckingIsEvent;
 
         public void CheckingIsEvent(DateTime ToDay)
         {
-            foreach (var item in db.Calendars)
+            foreach (var item in db.DbEvents)
             {
-                if (Convert.ToDateTime(item.FullDate) > ToDay)
+                if (item.Calendars.ToString() == ToDay.ToShortDateString())
                 {
+                    EventCheckingIsEventToDay?.Invoke(item);
                     break;
                 }
-                else if (item.FullDate == ToDay.ToShortDateString())
+                else if (DateTime.Parse(item.Calendars.ToString()) < ToDay)
                 {
-                    if (item.Events.Count > 0)
-                    {
-                        EventCheckingIsEvent?.Invoke("ToDay is Event!");
-                        break;
-                    }
+                    EventCheckingIsEvent?.Invoke(item);
+                }
+                else if (Convert.ToDateTime(item.Calendars.ToString()) > ToDay)
+                {
+                    break;
                 }
             }
         }

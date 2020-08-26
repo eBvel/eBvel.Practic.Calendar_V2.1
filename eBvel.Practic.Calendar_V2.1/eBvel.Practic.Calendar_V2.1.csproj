@@ -75,11 +75,23 @@
     <Compile Include="Controls\OpenEventsControl.Designer.cs">
       <DependentUpon>OpenEventsControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\StartPageControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\StartPageControl.Designer.cs">
+      <DependentUpon>StartPageControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\AddEventForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\AddEventForm.Designer.cs">
       <DependentUpon>AddEventForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AddHoliDaysForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddHoliDaysForm.Designer.cs">
+      <DependentUpon>AddHoliDaysForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\CreateCalendarForm.cs">
       <SubType>Form</SubType>
@@ -93,6 +105,12 @@
     <Compile Include="Forms\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\PrintDocumentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PrintDocumentForm.Designer.cs">
+      <DependentUpon>PrintDocumentForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Controls\CreateCalendarControl.resx">
@@ -104,14 +122,23 @@
     <EmbeddedResource Include="Controls\OpenEventsControl.resx">
       <DependentUpon>OpenEventsControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\StartPageControl.resx">
+      <DependentUpon>StartPageControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\AddEventForm.resx">
       <DependentUpon>AddEventForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddHoliDaysForm.resx">
+      <DependentUpon>AddHoliDaysForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\CreateCalendarForm.resx">
       <DependentUpon>CreateCalendarForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PrintDocumentForm.resx">
+      <DependentUpon>PrintDocumentForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

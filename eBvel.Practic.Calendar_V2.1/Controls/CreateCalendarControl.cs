@@ -3,6 +3,7 @@ using System.Windows.Forms;
 using CLibrary;
 using System.Data.Entity;
 using eBvel.Practic.Calendar_V2._1.Forms;
+using System.Collections.Generic;
 
 namespace eBvel.Practic.Calendar_V2._1.Controls
 {
@@ -10,14 +11,21 @@ namespace eBvel.Practic.Calendar_V2._1.Controls
     {
         CalendarDBContext db;
         public DateTime StartDay;
+        List<string> ListHoliDays;
         bool bt1;
+        //
+        //Construction.
+        //
         public CreateCalendarControl()
         {
             InitializeComponent();
             db = new CalendarDBContext();
             db.Calendars.Load();
+            ListHoliDays = new List<string>();
         }
-
+        //
+        //Button, for filling the calendar db.
+        //
         private void FirstDateButton_Click(object sender, EventArgs e)
         {
             var createForm = new CreateCalendarForm();
@@ -36,7 +44,9 @@ namespace eBvel.Practic.Calendar_V2._1.Controls
                 checkBox1.Checked = true;
             }
         }
-
+        //
+        //Method, for filling the calendar db.
+        //
         private bool FillCalendar(CreateCalendarForm createForm, DialogResult result, CLibrary.Calendar calendar)//, List<CLibrary.Calendar> lcalendar)
         {
             if (result == DialogResult.OK)
@@ -48,17 +58,16 @@ namespace eBvel.Practic.Calendar_V2._1.Controls
                 short _year = Convert.ToInt16(StartDay.Year);
                 byte _interval = 12;
 
-                void LeapYEar() //Function.
+                void LeapYear() //Function.
                 {
                     if (_year % 4 == 0 && _month < 3)
                         calendar.Months.ListNumMonth[1]++;
                     else if (_year % 4 != 0 && calendar.Months.ListNumMonth[1] == 29)
                         calendar.Months.ListNumMonth[1]--;
                 }
-
                 try
                 {
-                    LeapYEar();
+                    LeapYear();
                     calendar.NumYear = _year;
                     for (byte j = 0; j < _interval; j++)
                     {
@@ -66,7 +75,7 @@ namespace eBvel.Practic.Calendar_V2._1.Controls
                         {
                             _year++;
                             calendar.NumYear = _year;
-                            LeapYEar();
+                            LeapYear();
                             _month = (sbyte)(1 - j);
                         }
                         calendar.Months.NumMonth = (byte)(_month + j);
@@ -101,15 +110,42 @@ namespace eBvel.Practic.Calendar_V2._1.Controls
             }
             return false;
         }
-
+        //
+        //Button, completes creation this calendar.
+        //
         private void CreateCalendarButton_Click(object sender, EventArgs e)
         {
+            foreach(var obj in db.Calendars)
+            {
+                if (ListHoliDays.Contains(obj.FullDate))
+                {
+                    obj.Days.RedDay = true;
+                }
+            }
+            db.SaveChanges();
             MessageBox.Show("Календарь создан!", "Уведомление", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
         }
-
+        //
+        //Button, adds to the list the holidays.
+        //
         private void HollyDaysButton_Click(object sender, EventArgs e)
         {
-            CreateCalendarButton.Enabled = true;
+            var holidaysForm = new AddHoliDaysForm();
+            
+            DialogResult result = holidaysForm.ShowDialog(this);
+            if (result == DialogResult.OK)
+            {
+                if (holidaysForm.listBox1.Items.Count > 0)
+                {
+                    foreach (var item in holidaysForm.listBox1.Items)
+                    {
+                        ListHoliDays.Add(item.ToString());
+                    }
+                }
+                MessageBox.Show("Даты в списке отсутствуют.\r\nДобавьте даты и попробуйте снова.", "Оповещение", 
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            CreateCalendar_Button.Enabled = true;
             checkBox2.Enabled = true;
             checkBox2.Checked = true;
         }

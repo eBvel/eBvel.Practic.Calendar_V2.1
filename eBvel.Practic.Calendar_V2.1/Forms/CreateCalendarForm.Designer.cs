@@ -59,13 +59,14 @@
             // 
             // Cancel_Button
             // 
-            this.Cancel_Button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.Cancel_Button.BackColor = System.Drawing.Color.DarkSlateGray;
             this.Cancel_Button.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.Cancel_Button.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
-            this.Cancel_Button.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.Cancel_Button.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.Cancel_Button.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Maroon;
             this.Cancel_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Cancel_Button.Font = new System.Drawing.Font("Trebuchet MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Cancel_Button.Location = new System.Drawing.Point(278, 234);
+            this.Cancel_Button.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Cancel_Button.ForeColor = System.Drawing.Color.White;
+            this.Cancel_Button.Location = new System.Drawing.Point(278, 274);
             this.Cancel_Button.Name = "Cancel_Button";
             this.Cancel_Button.Size = new System.Drawing.Size(108, 41);
             this.Cancel_Button.TabIndex = 33;
@@ -74,13 +75,14 @@
             // 
             // Next_Button
             // 
-            this.Next_Button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.Next_Button.BackColor = System.Drawing.Color.DarkSlateGray;
             this.Next_Button.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.Next_Button.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Lime;
-            this.Next_Button.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.Next_Button.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.Next_Button.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Green;
             this.Next_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Next_Button.Font = new System.Drawing.Font("Trebuchet MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Next_Button.Location = new System.Drawing.Point(430, 234);
+            this.Next_Button.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Next_Button.ForeColor = System.Drawing.Color.White;
+            this.Next_Button.Location = new System.Drawing.Point(430, 274);
             this.Next_Button.Name = "Next_Button";
             this.Next_Button.Size = new System.Drawing.Size(108, 41);
             this.Next_Button.TabIndex = 34;
@@ -90,188 +92,206 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label10.Location = new System.Drawing.Point(9, 128);
+            this.label10.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label10.Location = new System.Drawing.Point(9, 155);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(240, 26);
+            this.label10.Size = new System.Drawing.Size(250, 23);
             this.label10.TabIndex = 32;
             this.label10.Text = "Выберите выходные дни";
             // 
             // panel7
             // 
-            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.panel7.Controls.Add(this.Sunday);
-            this.panel7.Location = new System.Drawing.Point(468, 157);
+            this.panel7.Location = new System.Drawing.Point(468, 184);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(70, 60);
             this.panel7.TabIndex = 25;
+            this.panel7.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Panel7_Down);
             // 
             // Sunday
             // 
             this.Sunday.AutoSize = true;
-            this.Sunday.Font = new System.Drawing.Font("Trebuchet MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Sunday.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Sunday.ForeColor = System.Drawing.Color.White;
             this.Sunday.Location = new System.Drawing.Point(19, 21);
             this.Sunday.Name = "Sunday";
-            this.Sunday.Size = new System.Drawing.Size(34, 23);
+            this.Sunday.Size = new System.Drawing.Size(36, 21);
             this.Sunday.TabIndex = 5;
             this.Sunday.Text = "Вс.";
             this.Sunday.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lSunday_Down);
             // 
             // panel6
             // 
-            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.panel6.Controls.Add(this.Saturday);
-            this.panel6.Location = new System.Drawing.Point(392, 157);
+            this.panel6.Location = new System.Drawing.Point(392, 184);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(70, 60);
             this.panel6.TabIndex = 26;
+            this.panel6.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Panel6_Down);
             // 
             // Saturday
             // 
             this.Saturday.AutoSize = true;
-            this.Saturday.Font = new System.Drawing.Font("Trebuchet MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Saturday.Location = new System.Drawing.Point(20, 21);
+            this.Saturday.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Saturday.ForeColor = System.Drawing.Color.White;
+            this.Saturday.Location = new System.Drawing.Point(16, 21);
             this.Saturday.Name = "Saturday";
-            this.Saturday.Size = new System.Drawing.Size(35, 23);
+            this.Saturday.Size = new System.Drawing.Size(40, 21);
             this.Saturday.TabIndex = 5;
             this.Saturday.Text = "Сб.";
             this.Saturday.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lSaturday_Down);
             // 
             // panel5
             // 
-            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.panel5.Controls.Add(this.Friday);
-            this.panel5.Location = new System.Drawing.Point(316, 157);
+            this.panel5.Location = new System.Drawing.Point(316, 184);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(70, 60);
             this.panel5.TabIndex = 27;
+            this.panel5.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Panel5_Down);
             // 
             // Friday
             // 
             this.Friday.AutoSize = true;
-            this.Friday.Font = new System.Drawing.Font("Trebuchet MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Friday.Location = new System.Drawing.Point(22, 21);
+            this.Friday.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Friday.ForeColor = System.Drawing.Color.White;
+            this.Friday.Location = new System.Drawing.Point(20, 21);
             this.Friday.Name = "Friday";
-            this.Friday.Size = new System.Drawing.Size(35, 23);
+            this.Friday.Size = new System.Drawing.Size(34, 21);
             this.Friday.TabIndex = 5;
             this.Friday.Text = "Пт.";
             this.Friday.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lFriday_Down);
             // 
             // panel4
             // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.panel4.Controls.Add(this.Thursday);
-            this.panel4.Location = new System.Drawing.Point(240, 157);
+            this.panel4.Location = new System.Drawing.Point(240, 184);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(70, 60);
             this.panel4.TabIndex = 28;
+            this.panel4.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Panel4_Down);
             // 
             // Thursday
             // 
             this.Thursday.AutoSize = true;
-            this.Thursday.Font = new System.Drawing.Font("Trebuchet MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Thursday.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Thursday.ForeColor = System.Drawing.Color.White;
             this.Thursday.Location = new System.Drawing.Point(19, 21);
             this.Thursday.Name = "Thursday";
-            this.Thursday.Size = new System.Drawing.Size(34, 23);
+            this.Thursday.Size = new System.Drawing.Size(31, 21);
             this.Thursday.TabIndex = 5;
             this.Thursday.Text = "Чт.";
             this.Thursday.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lThursday_Down);
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.panel3.Controls.Add(this.Wednesday);
-            this.panel3.Location = new System.Drawing.Point(164, 157);
+            this.panel3.Location = new System.Drawing.Point(164, 184);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(70, 60);
             this.panel3.TabIndex = 29;
+            this.panel3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Panel3_Down);
             // 
             // Wednesday
             // 
             this.Wednesday.AutoSize = true;
-            this.Wednesday.Font = new System.Drawing.Font("Trebuchet MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Wednesday.Location = new System.Drawing.Point(19, 21);
+            this.Wednesday.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Wednesday.ForeColor = System.Drawing.Color.White;
+            this.Wednesday.Location = new System.Drawing.Point(17, 21);
             this.Wednesday.Name = "Wednesday";
-            this.Wednesday.Size = new System.Drawing.Size(35, 23);
+            this.Wednesday.Size = new System.Drawing.Size(41, 21);
             this.Wednesday.TabIndex = 5;
             this.Wednesday.Text = "Ср.";
             this.Wednesday.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lWednesday_Down);
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.panel2.Controls.Add(this.Tuesday);
-            this.panel2.Location = new System.Drawing.Point(88, 157);
+            this.panel2.Location = new System.Drawing.Point(88, 184);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(70, 60);
             this.panel2.TabIndex = 30;
+            this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Panel2_Down);
             // 
             // Tuesday
             // 
             this.Tuesday.AutoSize = true;
-            this.Tuesday.Font = new System.Drawing.Font("Trebuchet MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Tuesday.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Tuesday.ForeColor = System.Drawing.Color.White;
             this.Tuesday.Location = new System.Drawing.Point(18, 21);
             this.Tuesday.Name = "Tuesday";
-            this.Tuesday.Size = new System.Drawing.Size(34, 23);
+            this.Tuesday.Size = new System.Drawing.Size(32, 21);
             this.Tuesday.TabIndex = 5;
             this.Tuesday.Text = "Вт.";
             this.Tuesday.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lTuesday_Down);
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.panel1.Controls.Add(this.Monday);
-            this.panel1.Location = new System.Drawing.Point(12, 157);
+            this.panel1.Location = new System.Drawing.Point(12, 184);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(70, 60);
             this.panel1.TabIndex = 31;
+            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Panel1_Down);
             // 
             // Monday
             // 
             this.Monday.AutoSize = true;
-            this.Monday.Font = new System.Drawing.Font("Trebuchet MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Monday.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Monday.ForeColor = System.Drawing.Color.White;
             this.Monday.Location = new System.Drawing.Point(18, 21);
             this.Monday.Name = "Monday";
-            this.Monday.Size = new System.Drawing.Size(37, 23);
+            this.Monday.Size = new System.Drawing.Size(37, 21);
             this.Monday.TabIndex = 5;
             this.Monday.Text = "Пн.";
             this.Monday.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lMonday_Down);
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Trebuchet MS", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(142, 9);
+            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(0, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(317, 29);
+            this.label2.Size = new System.Drawing.Size(564, 55);
             this.label2.TabIndex = 24;
             this.label2.Text = "Введите начальные данные";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(9, 50);
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(9, 77);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(124, 26);
+            this.label1.Size = new System.Drawing.Size(141, 23);
             this.label1.TabIndex = 23;
             this.label1.Text = "Дата начала";
             // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.CustomFormat = "dd.MM.yyyy";
-            this.dateTimePicker1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.dateTimePicker1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(12, 81);
+            this.dateTimePicker1.Location = new System.Drawing.Point(12, 108);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 30);
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 32);
             this.dateTimePicker1.TabIndex = 21;
             // 
             // CreateCalendarForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(584, 350);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.ClientSize = new System.Drawing.Size(564, 350);
             this.Controls.Add(this.Cancel_Button);
             this.Controls.Add(this.Next_Button);
             this.Controls.Add(this.label10);

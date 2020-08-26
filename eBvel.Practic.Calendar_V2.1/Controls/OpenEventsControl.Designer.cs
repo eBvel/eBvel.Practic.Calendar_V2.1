@@ -32,19 +32,19 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.calendarsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.textEventDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.placeEventDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.startDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.endDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.isEventDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.eventsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.Search_Button = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.SearchBox = new System.Windows.Forms.TextBox();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.calendarsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.textEventDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.placeEventDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.startDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.endDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IsEvent = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.eventsBindingSource)).BeginInit();
             this.panel1.SuspendLayout();
@@ -54,9 +54,9 @@
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToResizeRows = false;
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -73,7 +73,7 @@
             this.placeEventDataGridViewTextBoxColumn,
             this.startDateDataGridViewTextBoxColumn,
             this.endDateDataGridViewTextBoxColumn,
-            this.isEventDataGridViewCheckBoxColumn});
+            this.IsEvent});
             this.dataGridView1.DataSource = this.eventsBindingSource;
             this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.Location = new System.Drawing.Point(0, 73);
@@ -90,54 +90,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(1037, 362);
             this.dataGridView1.TabIndex = 3;
             this.dataGridView1.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseDoubleClick);
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Код";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.Width = 80;
-            // 
-            // calendarsDataGridViewTextBoxColumn
-            // 
-            this.calendarsDataGridViewTextBoxColumn.DataPropertyName = "Calendars";
-            this.calendarsDataGridViewTextBoxColumn.HeaderText = "Дата";
-            this.calendarsDataGridViewTextBoxColumn.Name = "calendarsDataGridViewTextBoxColumn";
-            // 
-            // textEventDataGridViewTextBoxColumn
-            // 
-            this.textEventDataGridViewTextBoxColumn.DataPropertyName = "TextEvent";
-            this.textEventDataGridViewTextBoxColumn.HeaderText = "Мероприятие";
-            this.textEventDataGridViewTextBoxColumn.Name = "textEventDataGridViewTextBoxColumn";
-            this.textEventDataGridViewTextBoxColumn.Width = 300;
-            // 
-            // placeEventDataGridViewTextBoxColumn
-            // 
-            this.placeEventDataGridViewTextBoxColumn.DataPropertyName = "PlaceEvent";
-            this.placeEventDataGridViewTextBoxColumn.HeaderText = "Место проведения";
-            this.placeEventDataGridViewTextBoxColumn.Name = "placeEventDataGridViewTextBoxColumn";
-            this.placeEventDataGridViewTextBoxColumn.Width = 120;
-            // 
-            // startDateDataGridViewTextBoxColumn
-            // 
-            this.startDateDataGridViewTextBoxColumn.DataPropertyName = "StartDate";
-            this.startDateDataGridViewTextBoxColumn.HeaderText = "Время начала";
-            this.startDateDataGridViewTextBoxColumn.Name = "startDateDataGridViewTextBoxColumn";
-            this.startDateDataGridViewTextBoxColumn.Width = 86;
-            // 
-            // endDateDataGridViewTextBoxColumn
-            // 
-            this.endDateDataGridViewTextBoxColumn.DataPropertyName = "EndDate";
-            this.endDateDataGridViewTextBoxColumn.HeaderText = "Время окончания";
-            this.endDateDataGridViewTextBoxColumn.Name = "endDateDataGridViewTextBoxColumn";
-            this.endDateDataGridViewTextBoxColumn.Width = 86;
-            // 
-            // isEventDataGridViewCheckBoxColumn
-            // 
-            this.isEventDataGridViewCheckBoxColumn.DataPropertyName = "IsEvent";
-            this.isEventDataGridViewCheckBoxColumn.HeaderText = "IsEvent";
-            this.isEventDataGridViewCheckBoxColumn.Name = "isEventDataGridViewCheckBoxColumn";
-            this.isEventDataGridViewCheckBoxColumn.Visible = false;
             // 
             // eventsBindingSource
             // 
@@ -201,6 +153,54 @@
             this.SearchBox.TabIndex = 0;
             this.SearchBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SearchBox_KeyPress);
             // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Код";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.Width = 80;
+            // 
+            // calendarsDataGridViewTextBoxColumn
+            // 
+            this.calendarsDataGridViewTextBoxColumn.DataPropertyName = "Calendars";
+            this.calendarsDataGridViewTextBoxColumn.HeaderText = "Дата";
+            this.calendarsDataGridViewTextBoxColumn.Name = "calendarsDataGridViewTextBoxColumn";
+            // 
+            // textEventDataGridViewTextBoxColumn
+            // 
+            this.textEventDataGridViewTextBoxColumn.DataPropertyName = "TextEvent";
+            this.textEventDataGridViewTextBoxColumn.HeaderText = "Мероприятие";
+            this.textEventDataGridViewTextBoxColumn.Name = "textEventDataGridViewTextBoxColumn";
+            this.textEventDataGridViewTextBoxColumn.Width = 300;
+            // 
+            // placeEventDataGridViewTextBoxColumn
+            // 
+            this.placeEventDataGridViewTextBoxColumn.DataPropertyName = "PlaceEvent";
+            this.placeEventDataGridViewTextBoxColumn.HeaderText = "Место проведения";
+            this.placeEventDataGridViewTextBoxColumn.Name = "placeEventDataGridViewTextBoxColumn";
+            this.placeEventDataGridViewTextBoxColumn.Width = 120;
+            // 
+            // startDateDataGridViewTextBoxColumn
+            // 
+            this.startDateDataGridViewTextBoxColumn.DataPropertyName = "StartDate";
+            this.startDateDataGridViewTextBoxColumn.HeaderText = "Время начала";
+            this.startDateDataGridViewTextBoxColumn.Name = "startDateDataGridViewTextBoxColumn";
+            this.startDateDataGridViewTextBoxColumn.Width = 86;
+            // 
+            // endDateDataGridViewTextBoxColumn
+            // 
+            this.endDateDataGridViewTextBoxColumn.DataPropertyName = "EndDate";
+            this.endDateDataGridViewTextBoxColumn.HeaderText = "Время окончания";
+            this.endDateDataGridViewTextBoxColumn.Name = "endDateDataGridViewTextBoxColumn";
+            this.endDateDataGridViewTextBoxColumn.Width = 86;
+            // 
+            // IsEvent
+            // 
+            this.IsEvent.DataPropertyName = "IsEvent";
+            this.IsEvent.HeaderText = "IsEvent";
+            this.IsEvent.Name = "IsEvent";
+            this.IsEvent.ReadOnly = true;
+            // 
             // OpenEventsControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -235,6 +235,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn placeEventDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn startDateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn endDateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn isEventDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn IsEvent;
     }
 }

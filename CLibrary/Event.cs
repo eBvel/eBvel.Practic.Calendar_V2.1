@@ -19,10 +19,5 @@ namespace CLibrary
         public string EndDate { get; set; }
 
         public bool IsEvent { get; set; }
-
-        //public override string ToString()
-        //{
-        //    return TextEvent;
-        //}
     }
 }

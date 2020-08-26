@@ -1,12 +1,5 @@
 ﻿using eBvel.Practic.Calendar_V2._1.Controls;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace eBvel.Practic.Calendar_V2._1
@@ -16,6 +9,8 @@ namespace eBvel.Practic.Calendar_V2._1
         public Form1()
         {
             InitializeComponent();
+            var c = new StartPageControl();
+            panel1.Controls.Add(c);
         }
 
         private void CreateCalendar_Menu_Click(object sender, EventArgs e)
